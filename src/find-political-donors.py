@@ -1,9 +1,11 @@
 from heapq import heappush as push, heappushpop as pushpop
 import datetime
 import os
+import sys
 
-date_output_path="../output/medianvals_by_date.txt"
-zip_output_path="../output/medianvals_by_zip.txt"
+input_file=sys.argv[1] #"../input/itcont.txt"
+zip_output_path=sys.argv[2] #"../output/medianvals_by_zip.txt"
+date_output_path=sys.argv[3] #"../output/medianvals_by_date.txt"
 
 class heap_median:
     def __init__(self):
@@ -129,7 +131,7 @@ if __name__ == '__main__':
     if (os.path.exists(date_output_path)):
         os.remove(date_output_path)
 
-    with open ("../input/itcont.txt") as f:
+    with open (input_file) as f:
         for line in f:
             process(line)
             # break
